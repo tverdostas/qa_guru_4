@@ -1,6 +1,5 @@
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.WebDriverRunner;
-import org.junit.jupiter.api.AfterAll;
+import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -8,17 +7,13 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class qaGuruGit {
+public class QaGuruGit {
 
     @BeforeEach
     public void setUp() {
         Configuration.browser = "chrome";
         Configuration.timeout = 40000;
-    }
-
-    @AfterAll
-    public static void AfterAll(){
-        WebDriverRunner.closeWebDriver();
+        Selenide.closeWebDriver();
     }
 
     @Test
