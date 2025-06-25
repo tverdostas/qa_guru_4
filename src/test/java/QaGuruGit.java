@@ -1,5 +1,6 @@
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -13,6 +14,10 @@ public class QaGuruGit {
     public void setUp() {
         Configuration.browser = "chrome";
         Configuration.timeout = 40000;
+    }
+
+    @AfterEach
+    public void closeWebDriver() {
         Selenide.closeWebDriver();
     }
 
